@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: #000;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add this line to push elements apart */
+  padding: 0 24px;
+}
+
+.nav img {
+  height: 64px;
+  margin-left: 24px;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.nav ul li:first-child {
+  margin-left: 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+}
+
+.nav ul li a:hover {
+  color: red;
+}
+
+#section--1 {
+  background-image: url('/images/Charizard\ VSTAR-1280x800.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 91vh;
+}
+
+.content {
+  text-align: center;
+  width: 300px;
+}
+
+.content button {
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content img {
+  height: 180px;
+}
+
+.pikachu {
+  margin-left: 180px;
+}
+
+.charazard {
+  margin-right: 180px;
+}
