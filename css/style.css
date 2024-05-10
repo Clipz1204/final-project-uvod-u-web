@@ -188,6 +188,7 @@ header {
 
 .testimonial-item {
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .testimonial-item:last-child {
@@ -283,10 +284,130 @@ footer .copyright {
   cursor: pointer;
 }
 
-.card.show-more .content {
+.card.show-more .content-1 {
   display: inline;
 }
 
 .card.show-more .dots-text {
   display: none;
+}
+
+.card {
+  width: 300px;
+  padding: 24px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.read-more-btn {
+  background-color: #339af0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #1971c2;
+}
+
+.upper {
+  display: flex;
+  justify-content: center;
+}
+
+.lower {
+  display: flex;
+  justify-content: center;
+}
+
+#section--3 h2 {
+  text-align: center;
+  color: #222;
+  line-height: 1.2;
+  font-size: 26px;
+}
+
+/* #section--3 {
+   background-image: url(/images/dce4rqj-f82a4858-c7c3-404f-82e9-229be614cff2.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 1400px;
+  background-repeat: no-repeat;
+    background-size: cover; 
+} */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #000;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: #fff;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: o;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }

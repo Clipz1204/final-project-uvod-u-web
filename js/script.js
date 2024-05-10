@@ -12,6 +12,11 @@ const cardIds = [
   'sv5-1',
   'sv5-2',
   'sv5-3',
+  'sv3pt5-151',
+  'sv3-141',
+  'swsh8-203',
+  'swsh8-17',
+  'swsh12pt5gg-GG56',
 ];
 const containers = [
   '.pikachu',
@@ -25,6 +30,11 @@ const containers = [
   '.card-7',
   '.card-8',
   '.card-9',
+  '.mew',
+  '.scizor',
+  '.blissey',
+  '.trevenant',
+  '.zoroark',
 ];
 
 function displayCard(cardId, container) {
@@ -145,15 +155,55 @@ const slider = function () {
 slider();
 
 //////////////// Read more button
+const readMoreBtn = document.querySelectorAll('.read-more-btn');
+const text = document.querySelectorAll('.card');
 
-const readMoreBtn = document.querySelector('.read-more-btn');
-const text = document.querySelector('.card');
+readMoreBtn.forEach((readMoreBtn, i) => {
+  readMoreBtn.addEventListener('click', (e) => {
+    text[i].classList.toggle('show-more');
+    if (readMoreBtn.innerText === 'Read More') {
+      readMoreBtn.innerText = 'Show Less';
+    } else {
+      readMoreBtn.innerText = 'Read More';
+    }
+  });
+});
 
-readMoreBtn.addEventListener('click', (e) => {
-  text.classList.toggle('show-more');
-  if (readMoreBtn.innerText === 'Read More') {
-    readMoreBtn.innerText = 'Show Less';
-  } else {
-    readMoreBtn.innerText = 'Read More';
+const openModalButton = document.querySelectorAll('[data-modal-target]');
+const closeModalButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openModalButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal);
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modals = document.querySelectorAll('.modal.active');
+    modals.forEach((modal) => {
+      closeModal(modal);
+    });
   }
 });
+
+closeModalButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal');
+    closeModal(modal);
+  });
+});
+
+function openModal(modal) {
+  if (modal == null) return;
+  modal.classList.add('active');
+  overlay.classList.add('active');
+}
+
+function closeModal(modal) {
+  if (modal == null) return;
+  modal.classList.remove('active');
+  overlay.classList.remove('active');
+}
