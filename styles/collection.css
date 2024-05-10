@@ -1,0 +1,45 @@
+.intro {
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.collection-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+#collection-logo {
+  width: 400px;
+  height: auto;
+}
+
+.main-card img {
+  margin: auto;
+  display: block;
+}
+
+.card {
+  height: fit-content;
+  width: 250px;
+  margin: 12px 60px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#collection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 64px 0;
+}
