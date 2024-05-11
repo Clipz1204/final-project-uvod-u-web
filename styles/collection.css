@@ -4,6 +4,10 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid black;
+  background-image: url("../images/intro_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .collection-info {
@@ -37,9 +41,37 @@
 }
 
 #collection {
+  text-align: center;
+  background: radial-gradient(
+    circle,
+    rgba(195, 195, 195, 1) 26%,
+    rgba(85, 85, 85, 1) 95%
+  );
+}
+
+#card-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 64px 0;
+  padding: 64px 0;
+}
+
+#load {
+  border: 0;
+  color: black;
+  border-radius: 40px;
+  font-size: 20px;
+  padding: 1em 1.8em;
+  background: rgb(240, 62, 62);
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+#load:hover {
+  background-color: #000000;
+  color: white;
 }
