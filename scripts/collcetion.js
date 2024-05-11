@@ -7,11 +7,14 @@ const collectionName = document.querySelector("#collection-name");
 const mainCard1 = document.querySelector("#main-card-1");
 const mainCard2 = document.querySelector("#main-card-2");
 const cardContainer = document.querySelector("#card-container");
+const loadBtn = document.querySelector("#load");
 
 let maxCardNum = 1;
 let counter = 1;
 
 const collectionTag = "dp3";
+
+loadBtn.addEventListener("click", displayCards);
 
 const fillMain = (cardNum, tag) => {
   fetch(`https://api.pokemontcg.io/v2/cards/${collectionTag}-${cardNum}`, {
@@ -48,8 +51,9 @@ async function loadCard(i) {
 }
 
 async function displayCards(i) {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 100; i++) {
     if (counter > maxCardNum) {
+      loadBtn.classList.add("hidden");
       break;
     }
     const data = await loadCard(counter);
