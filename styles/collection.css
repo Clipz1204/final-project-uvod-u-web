@@ -1,3 +1,12 @@
+.container {
+  text-align: center;
+  background: radial-gradient(
+    circle,
+    rgba(195, 195, 195, 1) 26%,
+    rgba(85, 85, 85, 1) 95%
+  );
+}
+
 .intro {
   text-align: center;
   height: 500px;
@@ -72,15 +81,6 @@
   object-fit: cover;
 }
 
-#collection {
-  text-align: center;
-  background: radial-gradient(
-    circle,
-    rgba(195, 195, 195, 1) 26%,
-    rgba(85, 85, 85, 1) 95%
-  );
-}
-
 #card-container {
   display: flex;
   align-items: center;
@@ -100,10 +100,15 @@
   align-items: center;
   gap: 0.6em;
   font-weight: bold;
+  margin: 0 auto;
   margin-bottom: 24px;
 }
 
 #load:hover {
   background-color: #000000;
   color: white;
+}
+
+.hidden {
+  display: none;
 }
