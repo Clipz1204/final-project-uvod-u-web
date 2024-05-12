@@ -11,6 +11,7 @@ const cardContainer = document.querySelector("#card-container");
 const loadBtn = document.querySelector("#load");
 const filterBtn = document.getElementById("filterButton");
 const searchField = document.getElementById("search");
+const searchBtn = document.getElementById("searchButton");
 
 let maxCardNum = 1;
 let counter = 1;
@@ -19,6 +20,16 @@ const collectionTag = "dp3";
 
 filterBtn.addEventListener("click", addFilterOptions);
 loadBtn.addEventListener("click", displayCards);
+searchBtn.addEventListener("click", searchCard);
+
+function searchCard() {
+  if (searchField.value == "") {
+    return;
+  }
+  counter = 1;
+  cardContainer.innerHTML = "";
+  displayCards(searchField.value);
+}
 
 function filterCard() {
   const selectRarity = document.querySelector("#rarity");
@@ -35,7 +46,13 @@ function filterCard() {
   }
   counter = 1;
   cardContainer.innerHTML = "";
-  displayCards(selectType.value, selectRarity.value, hpMin.value, hpMax.value);
+  displayCards(
+    "",
+    selectType.value,
+    selectRarity.value,
+    hpMin.value,
+    hpMax.value
+  );
 }
 
 function addFilterOptions() {
@@ -148,7 +165,7 @@ async function loadCard(i) {
   return card;
 }
 
-async function displayCards(type, rarity, hp_min, hp_max) {
+async function displayCards(name, type, rarity, hp_min, hp_max) {
   for (let i = 0; i < 8; i++) {
     if (counter > maxCardNum) {
       loadBtn.classList.add("hidden");
@@ -161,8 +178,10 @@ async function displayCards(type, rarity, hp_min, hp_max) {
     const cardType = cardInfo.types;
     const cardRarity = cardInfo.rarity;
     const cardHp = cardInfo.hp;
+    const cardName = cardInfo.name;
 
     if (
+      name === undefined &&
       type === undefined &&
       rarity === undefined &&
       hp_max == undefined &&
@@ -171,9 +190,17 @@ async function displayCards(type, rarity, hp_min, hp_max) {
       createCard(cardInfo);
       continue;
     }
-    console.log(type);
-    console.log(hp_min);
-    console.log(hp_max);
+
+    if (name != "") {
+      if (cardName.includes(name)) {
+        createCard(cardInfo);
+        continue;
+      } else {
+        i--;
+        continue;
+      }
+    }
+
     if (type != "default") {
       if (cardType == type) {
         if (rarity != "default") {
