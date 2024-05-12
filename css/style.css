@@ -17,7 +17,7 @@ header {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Add this line to push elements apart */
+  justify-content: space-between;
   padding: 0 24px;
 }
 
@@ -72,6 +72,12 @@ header {
   font-size: 18px;
   font-weight: bold;
   border-radius: 30px;
+  background-color: #ffa94d;
+  cursor: pointer;
+}
+
+.content button:hover {
+  background-color: #f76707;
 }
 
 .content img {
@@ -86,14 +92,14 @@ header {
   margin-right: 180px;
 }
 
-/* SLIDER */
+/* Slider*/
 .slider {
   max-width: 100rem;
   height: 50rem;
   margin: 0 auto;
   position: relative;
 
-  /* IN THE END */
+  /* END */
   overflow: hidden;
 }
 
@@ -106,13 +112,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* THIS creates the animation! */
   transition: transform 1s;
 }
 
 .slide > img {
-  /* Only for images that have different size than slide */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -162,9 +165,6 @@ header {
   margin-right: 1.75rem;
   cursor: pointer;
   transition: all 0.5s;
-
-  /* Only necessary when overlying images */
-  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
 }
 
 .dots__dot:last-child {
@@ -342,7 +342,7 @@ footer .copyright {
 }
 
 #section--3 {
-  background-color: #15aabf;
+  background-color: #20c997;
   width: 100%;
   height: 1500px;
 }
@@ -405,5 +405,5 @@ footer .copyright {
 
 #overlay.active {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
