@@ -172,6 +172,7 @@ readMoreBtn.forEach((readMoreBtn, i) => {
 const openModalButton = document.querySelectorAll('[data-modal-target]');
 const closeModalButton = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
+const sliderBtn = document.querySelector('.slider__btn');
 
 openModalButton.forEach((button) => {
   button.addEventListener('click', () => {
@@ -200,10 +201,20 @@ function openModal(modal) {
   if (modal == null) return;
   modal.classList.add('active');
   overlay.classList.add('active');
+  const sliderBtnLeft = document.querySelector('.slider__btn--left');
+  const sliderBtnRight = document.querySelector('.slider__btn--right');
+
+  sliderBtnLeft.classList.add('active');
+  sliderBtnRight.classList.add('active');
 }
 
 function closeModal(modal) {
   if (modal == null) return;
   modal.classList.remove('active');
   overlay.classList.remove('active');
+  const sliderBtnLeft = document.querySelector('.slider__btn--left');
+  const sliderBtnRight = document.querySelector('.slider__btn--right');
+
+  sliderBtnLeft.classList.remove('active');
+  sliderBtnRight.classList.remove('active');
 }

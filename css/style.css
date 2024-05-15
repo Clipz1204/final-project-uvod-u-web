@@ -137,6 +137,14 @@ header {
   cursor: pointer;
 }
 
+.slider__btn--left.active {
+  display: none;
+}
+
+.slider__btn--right.active {
+  display: none;
+}
+
 .slider__btn--left {
   left: 6%;
   transform: translate(-50%, -50%);
@@ -339,12 +347,20 @@ footer .copyright {
   color: #222;
   line-height: 1.2;
   font-size: 26px;
+  padding-top: 16px;
 }
 
 #section--3 {
-  background-color: #20c997;
+  background-image: url(/images/HD\ wallpaper_\ Grey\ Abstract\ Geometric\ Triangle\ Background\,\ Aero\,\ Patterns\,\ Gray.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #20c997; */
   width: 100%;
-  height: 1500px;
+  /* height: 1500px; */
+}
+
+#section--3 p {
+  line-height: 1.2;
 }
 
 .modal {
